@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@300&family=Nanum+Gothic&family=Urbanist:wght@800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+/*# sourceMappingURL=var-reset.css.map */

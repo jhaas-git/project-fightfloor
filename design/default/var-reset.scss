@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@300&family=Nanum+Gothic&family=Urbanist:wght@800&display=swap');
+$brand: 'Montserrat', sans-serif;
+$text: 'Nanum Gothic', sans-serif;
+$outline: 'Urbanist', sans-serif;
+$motivational: 'Fugaz One', cursive;
+
+// Color scheme
+$white: #fff;
+$shade: #4e4c4c;
+$black: #000000;
+$accent: #ffba24;
+$black-80: #181818;
+
+// Default css
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
