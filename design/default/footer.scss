@@ -1,0 +1,82 @@
+@import 'var-reset.scss';
+
+footer {
+    width: 100%;
+    background-color: $black;
+    .footer-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 0;
+        .column {
+            width: 100%;
+            padding: 15px;
+            .column-content {
+                line-height: 24px;
+                font-family: $brand;
+                font-size: 0.83rem;
+                letter-spacing: 0.8px;
+                color: $white;
+                h3 {
+                    font-size: 0.93rem;
+                    color: $accent;
+                }
+                ul {
+                    list-style: none;
+                }
+                a {
+                    color: $white;
+                }
+                a:hover {
+                    opacity: 0.7;
+                    transition: 0.2s ease-in;
+                }
+                form {
+                    width: 100%;
+                    margin-top: 15px;
+                    input {
+                        width: 100%;
+                        height: 40px;
+                        padding: 0 0 0 10px;
+                        font-family: $brand;
+                        font-size: 0.83rem;
+                        outline: none;
+                        border: none;
+                        background-color: $white;
+                        color: $black;
+                    }
+                    button {
+                        width: 100%;
+                        height: 35px;
+                        font-family: $brand;
+                        letter-spacing: 1.5px;
+                        border: none;
+                        background-color: $accent;
+                        color: $black;
+                    }
+                    button:hover {
+                        cursor: pointer;
+                        opacity: 0.93;
+                        transition: 0.2s ease-in;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 630px) {
+    footer {
+        .footer-container {
+            .column {
+                display: flex;
+                width: 33.3333%; // From 100% width to 33.33% making it 3 columns.
+                float: left;
+            }
+            .footer-row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+    }
+}
