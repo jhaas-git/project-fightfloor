@@ -21,7 +21,7 @@
                 // Display the 'aanmelden' button only when no session is set.
                 // Session running? It will link to the profile with a greeting.
                 if(!isset($_SESSION['loggedin'])) {
-                    echo "<li><a href='../template/aanmelden.php' class='loginBtn'>inloggen</a></li>";
+                    echo "<li><a href='../template/signin.php' class='loginBtn'>inloggen</a></li>";
                 } else {
                     echo "<li><a href='../template/profile.php'>Hallo, <span>". $_SESSION["sVoornaam"] ."</span></a></li>";
                 }
