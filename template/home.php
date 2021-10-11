@@ -18,7 +18,7 @@
             <video src="../media/home/training.mp4" autoplay loop></video>
             <div class="hero-cta">
                 <h3>zet <span>jezelf</span> <br> eens op het <br> prioriteitenlijstje.</h3>
-                <button>registreren</button>
+                <button id="registerBtn">registreren</button>
             </div>
         </div>
 
@@ -39,6 +39,32 @@
                 <div class="flex-content-right">
                     <div class="image-container">
                         <img src="../media/home/our_club.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="registerModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-header-content">
+                        <h3>Registratie</h3>
+                        <span class="close bi bi-x"></span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body-content">
+                            <form action="../model/register.php" method="post">
+                                <input type="text" name="voornaam">
+                                <input type="text" name="achternaam">
+                                <input type="text" name="woonplaats">
+                                <input type="text" name="adres">
+                                <input type="text" name="postcode">
+                                <input type="text" name="telefoonnummer">
+                                <input type="text" name="mail">
+                                <input type="password" name="wachtwoord">
+                                <button type="submit">registreren</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,5 +127,7 @@
     <?php include 'default/footer.php' ?>
 
     <script src="../javascript/script.js"></script>
+    <script src="../javascript/register.js"></script>
+
 </body>
 </html>

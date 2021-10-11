@@ -13,7 +13,10 @@ html {
 
 header {
   position: absolute;
-  background-color: #ffba24;
+}
+
+main {
+  min-height: 100vh;
 }
 
 main .split-container {
@@ -21,12 +24,12 @@ main .split-container {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 main .split-container .left-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #fff;
 }
 
@@ -120,7 +123,7 @@ main .split-container .left-container .left-content .form-container button:hover
 main .split-container .right-container {
   display: none;
   width: 50%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #ffba24;
 }
 

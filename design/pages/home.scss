@@ -54,6 +54,58 @@ main {
         background-color: #00000060;
     }
 
+    .modal {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #000000c0;
+        animation-name: slideIn;
+        animation-duration: 0.4s;
+        z-index: 10;
+
+        .modal-content {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-family: $motivational;
+            font-size: 0.87rem;
+            text-transform: uppercase;
+            animation-name: slideIn;
+            animation-duration: 0.3s;
+
+            .modal-header {
+                background-color: $accent;
+                .modal-header-content {
+                    display: flex;
+                    max-width: 550px;
+                    margin: 0 auto;
+                    padding: 10px 15px;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .close {
+                        cursor: pointer;
+                        font-size: 1.6rem;
+                        line-height: 20px;
+                        color: #ac0202;
+                    }
+                }
+            }
+
+            .modal-body {
+                background-color: $white;
+                .modal-body-content {
+                    max-width: 550px;
+                    margin: 0 auto;
+                    padding: 15px;
+                }
+            }
+        }
+    }
+
     .flex-container {
         width: 100%;
         margin-top: 20px;
@@ -194,3 +246,14 @@ main {
         }
     }
 }
+
+// modal animations
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
