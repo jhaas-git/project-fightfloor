@@ -23,7 +23,10 @@
                 if(!isset($_SESSION['loggedin'])) {
                     echo "<li><a href='../template/signin.php' class='loginBtn'>inloggen</a></li>";
                 } else {
+                    // Display the logged in users' name and link to their profile. 
                     echo "<li><a href='../template/profile.php'>Hallo, <span>". $_SESSION["sVoornaam"] ."</span></a></li>";
+                    // Display the option to logout when logged in.
+                    echo "<li><a href='../model/signout.php' class='loginBtn'>uitloggen</span></a></li>";
                 }
                 ?>
             </ul>
