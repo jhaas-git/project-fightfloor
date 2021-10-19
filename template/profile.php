@@ -1,5 +1,6 @@
 <?php
     include '../model/config/connect.php';
+
     session_start();
     // If the user is not logged in redirect to the sign in page...
     if (!isset($_SESSION['loggedin'])) {
@@ -40,19 +41,15 @@
             <div class="flex-content">
                 <div class="content-box motivation left">
                     <div class="text-container">
-                        <h3>wij zijn trots op jou. <br> inmiddels heb je al <span>13</span> <br> lessen afgerond... 👏🏽
-                        </h3>
+                        <h3>wij zijn trots op jou. <br> inmiddels heb je al <span>13</span> <br> lessen afgerond... 👏🏽</h3>
                     </div>
                 </div>
                 <div class="content-box right">
                     <div class="text-container">
                         <ul>
-                            <li class="label">Volledige naam: <p>Joey Haas</p>
-                            </li>
-                            <li class="label">Telefoonnummer: <p>06 818 35 742</p>
-                            </li>
-                            <li class="label">e-Mailadres: <p>joeyhaas@gmail.com</p>
-                            </li>
+                            <li class="label">Volledige naam: <p>Joey Haas</p></li>
+                            <li class="label">Telefoonnummer: <p>06 818 35 742</p></li>
+                            <li class="label">e-Mailadres: <p>joeyhaas@gmail.com</p></li>
                         </ul>
                     </div>
                 </div>
@@ -60,19 +57,15 @@
             <div class="flex-content" id="flex-direction">
                 <div class="content-box motivation right">
                     <div class="text-container">
-                        <h3><span>kickboks</span> is de sport die je <br> het afgelopen jaar het <br> meest hebt
-                            beoefend.</h3>
+                        <h3><span>kickboks</span> is de sport die je <br> het afgelopen jaar het <br> meest hebt beoefend.</h3>
                     </div>
                 </div>
                 <div class="content-box left">
                     <div class="text-container">
                         <ul>
-                            <li class="label">Straatnaam/Huisnummer: <p>Flipje's Erf 34</p>
-                            </li>
-                            <li class="label">Woonplaats: <p>Tiel</p>
-                            </li>
-                            <li class="label">Postcode: <p>4005 GD</p>
-                            </li>
+                            <li class="label">Straatnaam/Huisnummer: <p>Flipje's Erf 34</p></li>
+                            <li class="label">Woonplaats: <p>Tiel</p></li>
+                            <li class="label">Postcode: <p>4005 GD</p></li>
                         </ul>
                     </div>
                 </div>

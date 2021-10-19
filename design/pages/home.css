@@ -123,7 +123,7 @@ main .modal .modal-content .modal-header .modal-header-content .close {
   cursor: pointer;
   font-size: 1.6rem;
   line-height: 20px;
-  color: #ac0202;
+  color: #ff3355;
 }
 
 main .modal .modal-content .modal-body {
@@ -133,7 +133,102 @@ main .modal .modal-content .modal-body {
 main .modal .modal-content .modal-body .modal-body-content {
   max-width: 550px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 20px 15px 30px 15px;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step {
+  display: none;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step .input-group label {
+  font-family: "Fugaz One", cursive;
+  font-size: 0.89rem;
+  color: #bebebe;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step .input-group input[type=text],
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step .input-group input[type=password] {
+  width: 100%;
+  height: 40px;
+  margin: 5px 0 20px 0;
+  padding-left: 5px;
+  border: 1px solid #bebebe;
+  outline: none;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step .input-group input[type=text]:focus,
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step .input-group input[type=password]:focus {
+  border: 1px solid #ffba24;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step .input-group.has-error .form-control {
+  border-color: #ff3355;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .button-group button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid #bebebe;
+  border-radius: 0 5px 0 5px;
+  background-color: transparent;
+  color: #bebebe;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .button-group #next:hover {
+  border: 1px solid #ffba24;
+  color: #ffba24;
+  -webkit-transition: 0.25s ease-in;
+  transition: 0.25s ease-in;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .button-group #previous {
+  padding: 0;
+  border: none;
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: #bebebe;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .button-group #previous:hover {
+  color: #ffba24;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .btn-prev {
+  display: none;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .btn-prev.is-active {
+  display: inline-block;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .step.is-active {
+  display: block;
+}
+
+main .modal .modal-content .modal-body .modal-body-content .form-wizard .progress-bar {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 20px;
+  background-color: #ffba24;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transform: scaleX(0.01);
+          transform: scaleX(0.01);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 main .flex-container {

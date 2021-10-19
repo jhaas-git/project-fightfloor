@@ -9,6 +9,7 @@ main {
             height: 100vh;
             object-fit: cover;
         }
+
         .hero-cta {
             position: absolute;
             top: 50%;
@@ -16,15 +17,18 @@ main {
             transform: translate(-50%, -50%);
             text-align: center;
             text-transform: uppercase;
+
             h3 {
                 font-family: $motivational;
                 font-size: 1.6rem;
                 color: $white;
+
                 span {
                     -webkit-text-stroke: 1px $accent;
                     -webkit-text-fill-color: transparent;
                 }
             }
+
             button {
                 margin-top: 15px;
                 padding: 5px 15px;
@@ -37,6 +41,7 @@ main {
                 background-color: transparent;
                 color: $white;
             }
+
             button:hover {
                 cursor: pointer;
                 background-color: $accent;
@@ -45,6 +50,7 @@ main {
             }
         }
     }
+
     // overlay
     .hero-video:before {
         position: absolute;
@@ -78,6 +84,7 @@ main {
 
             .modal-header {
                 background-color: $accent;
+
                 .modal-header-content {
                     display: flex;
                     max-width: 550px;
@@ -90,17 +97,111 @@ main {
                         cursor: pointer;
                         font-size: 1.6rem;
                         line-height: 20px;
-                        color: #ac0202;
+                        color: #ff3355;
                     }
                 }
             }
 
             .modal-body {
                 background-color: $white;
+
                 .modal-body-content {
                     max-width: 550px;
                     margin: 0 auto;
-                    padding: 15px;
+                    padding: 20px 15px 30px 15px;
+
+                    .form-wizard {
+
+                        // Hide steps that aren't active
+                        .step {
+                            display: none;
+
+                            .input-group {
+                                label {
+                                    font-family: $motivational;
+                                    font-size: 0.89rem;
+                                    color: $shade-80;
+                                }
+
+                                input[type=text],
+                                input[type=password] {
+                                    width: 100%;
+                                    height: 40px;
+                                    margin: 5px 0 20px 0;
+                                    padding-left: 5px;
+                                    border: 1px solid $shade-80;
+                                    outline: none;
+                                }
+
+                                input[type=text]:focus,
+                                input[type=password]:focus {
+                                    border: 1px solid $accent;
+                                    transition: 0.25s ease-in-out;
+                                }
+                            }
+
+                            // Show error when input is invalid.
+                            .input-group.has-error .form-control {
+                                border-color: #ff3355;
+                            }
+                        }
+
+                        .button-group {
+                            display: flex;
+                            justify-content: space-between;
+
+                            button {
+                                cursor: pointer;
+                                padding: 8px 12px;
+                                border: 1px solid $shade-80;
+                                border-radius: 0 5px 0 5px;
+                                background-color: transparent;
+                                color: $shade-80;
+                            }
+
+                            #next:hover {
+                                border: 1px solid $accent;
+                                color: $accent;
+                                transition: 0.25s ease-in;
+                            }
+
+                            // Reverse styling for the previous button.
+                            #previous {
+                                padding: 0;
+                                border: none;
+                                font-size: 1.1rem;
+                                background-color: transparent;
+                                color: $shade-80;
+                            }
+
+                            #previous:hover {
+                                color: $accent;
+                            }
+                        }
+
+                        .btn-prev {
+                            display: none;
+                        }
+
+                        .btn-prev.is-active {
+                            display: inline-block;
+                        }
+
+                        // Adding the is-active class makes the current step visible.
+                        .step.is-active {
+                            display: block;
+                        }
+
+                        .progress-bar {
+                            width: 100%;
+                            height: 3px;
+                            margin-bottom: 20px;
+                            background-color: $accent;
+                            transform-origin: left center;
+                            transform: scaleX(0.01);
+                            transition: transform 0.5s ease;
+                        }
+                    }
                 }
             }
         }
@@ -122,29 +223,35 @@ main {
 
                 .text-container {
                     width: 100%;
+
                     h3 {
                         font-family: $outline;
                         font-size: 2.3rem;
                         text-transform: uppercase;
                     }
+
                     p {
                         margin: 10px 0 0 0;
                         line-height: 23px;
                         font-family: $brand;
                         font-size: 0.77rem;
                     }
+
                     #outline {
                         -webkit-text-stroke: 1.5px $accent;
                         -webkit-text-fill-color: transparent;
                     }
                 }
             }
+
             .flex-content-right {
                 width: 100%;
                 margin: 20px 0 0 0;
+
                 .image-container {
                     max-width: 300px;
                     margin: 0 auto;
+
                     img {
                         width: 100%;
                     }
@@ -176,6 +283,7 @@ main {
                 text-decoration: none;
                 color: $accent;
             }
+
             a:hover {
                 color: $white;
                 transition: 0.2s ease-in;
@@ -191,6 +299,7 @@ main {
                 h3 {
                     font-size: 1.8rem;
                 }
+
                 button {
                     font-size: 0.9rem;
                 }
@@ -199,27 +308,34 @@ main {
 
         .flex-container {
             margin-top: 125px;
+
             .flex-content {
                 display: flex;
                 align-items: center;
+
                 .flex-content-left {
                     width: 50%;
+
                     .text-container {
                         max-width: 400px;
                         margin: 0 auto;
+
                         h3 {
                             padding: 0 15px 0 0;
                             font-size: 2.6rem;
                         }
+
                         .text-right {
                             padding: 0 0 0 15px;
                         }
+
                         p {
                             padding: 0 15px 0 0;
                             font-size: 0.83rem;
                         }
                     }
                 }
+
                 .flex-content-right {
                     width: 50%;
                     margin: 0;
@@ -229,12 +345,14 @@ main {
                     }
                 }
             }
+
             // changing the flex direction of the first and last container.
             #change-direction {
                 direction: rtl;
                 text-align: left;
             }
         }
+
         #bottom-container {
             margin-top: 250px;
             background-color: $black;
@@ -249,11 +367,25 @@ main {
 
 // modal animations
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0} 
-    to {bottom: 0; opacity: 1}
-  }
-  
-  @keyframes slideIn {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
-  }
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
