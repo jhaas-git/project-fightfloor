@@ -1,5 +1,6 @@
 <?php
     include '../model/config/connect.php';
+    include '../model/profile/profileFunc.php';
 
     session_start();
     // If the user is not logged in redirect to the sign in page...
@@ -7,6 +8,8 @@
         header('Location: signin.php');
         exit;
     }
+
+    $profileDetails = getProfileDetails();
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +50,9 @@
                 <div class="content-box right">
                     <div class="text-container">
                         <ul>
-                            <li class="label">Volledige naam: <p>Joey Haas</p></li>
-                            <li class="label">Telefoonnummer: <p>06 818 35 742</p></li>
-                            <li class="label">e-Mailadres: <p>joeyhaas@gmail.com</p></li>
+                            <li class="label">Volledige naam: <p><? echo $profileDetails['sVoornaam']; ?> <? echo $profileDetails['sAchternaam']; ?></p></li>
+                            <li class="label">Telefoonnummer: <p><? echo $profileDetails['sTelefoon']; ?></p></li>
+                            <li class="label">e-Mailadres: <p><? echo $profileDetails['sMail']; ?></p></li>
                         </ul>
                     </div>
                 </div>
@@ -63,9 +66,9 @@
                 <div class="content-box left">
                     <div class="text-container">
                         <ul>
-                            <li class="label">Straatnaam/Huisnummer: <p>Flipje's Erf 34</p></li>
-                            <li class="label">Woonplaats: <p>Tiel</p></li>
-                            <li class="label">Postcode: <p>4005 GD</p></li>
+                            <li class="label">Straatnaam/Huisnummer: <p><? echo $profileDetails['sAdres']; ?></p></li>
+                            <li class="label">Woonplaats: <p><? echo $profileDetails['sWoonplaats']; ?></p></li>
+                            <li class="label">Postcode: <p><? echo $profileDetails['sPostcode']; ?></p></li>
                         </ul>
                     </div>
                 </div>

@@ -116,13 +116,6 @@ main .flex-container .flex-content .content-box .text-container ul .label p {
   color: #bebebe;
 }
 
-main .flex-container .flex-content .content-box:hover {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04);
-  -webkit-transition: 0.25s ease-in;
-  transition: 0.25s ease-in;
-}
-
 main .flex-container .flex-content .motivation {
   background-color: #ffba24;
 }
