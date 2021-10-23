@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@300&family=Nanum+Gothic&family=Urbanist:wght@800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+  padding-top: 65px;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 75px 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .container .timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  margin: 0 auto;
+}
+
+main .container .timeline ul {
+  list-style: none;
+}
+
+main .container .timeline ul li {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.15) 0px 1px 3px -1px, rgba(0, 0, 0, 0.15) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.15) 0px 1px 3px -1px, rgba(0, 0, 0, 0.15) 0px 1px 3px -1px;
+}
+
+main .container .timeline ul li .timeline-result .result-date {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.79rem;
+  letter-spacing: 2px;
+  color: #ffba24;
+}
+
+main .container .timeline ul li .timeline-result .result-title {
+  margin-bottom: 10px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: #181818;
+}
+
+main .container .timeline ul li .timeline-result .result-coach {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: "Urbanist", sans-serif;
+  font-size: 0.79rem;
+  letter-spacing: 2px;
+  color: #4e4c4c;
+}
+
+main .container .timeline ul li .timeline-result .result-info {
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.83rem;
+  letter-spacing: 1px;
+  line-height: 22px;
+  color: #4e4c4c;
+}
+
+main .container .timeline ul li .timeline-result a {
+  cursor: pointer;
+  padding: 5px 8px 5px 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.79rem;
+  letter-spacing: 1px;
+  border-radius: 0 6px 0 6px;
+  background-color: #181818;
+  color: #fff;
+}
+
+main .container .timeline ul li .timeline-result a:hover {
+  background-color: #4e4c4c;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+}
+
+main .container .timeline ul li:hover {
+  background-color: #7c7c7c0a;
+  -webkit-transition: 0.25s ease-in;
+  transition: 0.25s ease-in;
+}
+
+main .container .timeline ul li:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 700px) {
+  main .container .timeline ul {
+    padding: 0 15px;
+  }
+  main .container .timeline ul li {
+    position: relative;
+    width: 50%;
+    margin-bottom: 50px;
+  }
+  main .container .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    border-radius: 0 10px 0 10px;
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px);
+  }
+  main .container .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    border-radius: 10px 0 10px 0;
+    -webkit-transform: translateX(15px);
+            transform: translateX(15px);
+  }
+  main .container .timeline ul li::before {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    top: 0px;
+    border-radius: 50%;
+    background-color: #181818;
+    content: '';
+  }
+  main .container .timeline ul li:nth-child(odd)::before {
+    right: -15px;
+    -webkit-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
+  }
+  main .container .timeline ul li:nth-child(even)::before {
+    left: -15px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  main .container .timeline ul .timeline-result .result-date {
+    position: absolute;
+    top: -30px;
+  }
+  main .container .timeline:before {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: #bebebe;
+    content: '';
+  }
+}
+/*# sourceMappingURL=planning.css.map */

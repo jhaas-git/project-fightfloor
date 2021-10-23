@@ -1,6 +1,6 @@
 <?php 
      $host = 'docker_mysql_1';
-     $db = 'fight-floor';
+     $db = 'test-fightfloor';
      $user = 'root';
      $password = 'root';
 ?>

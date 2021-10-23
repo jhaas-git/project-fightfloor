@@ -16,7 +16,7 @@
                 // Only display the link to admin panel when the logged in user has the
                 // correct roles. 1 = eigenaar, 2 = coach.
                 if ($_SESSION['rollen_idRol'] == 1 || $_SESSION['rollen_idRol'] == 2) {
-                    echo "<li><a href='adminpanel.php'>admin paneel</a></li>";
+                    echo "<li><a href='adminpanel.php'>admin</a></li>";
                 }
                 // Display the 'aanmelden' button only when no session is set.
                 // Session running? It will link to the profile with a greeting.

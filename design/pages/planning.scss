@@ -1,0 +1,172 @@
+@import '../default/var-reset.scss';
+
+main {
+    min-height: 100vh;
+    padding-top: 65px;
+
+    .container {
+        display: flex;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 75px 15px;
+        align-items: center;
+        justify-content: center;
+
+        .timeline {
+            position: relative;
+            width: 100%;
+            max-width: 1280px;
+            height: auto;
+            margin: 0 auto;
+
+            ul {
+                list-style: none;
+
+                li {
+                    padding: 15px;
+                    margin-bottom: 20px;
+                    border-radius: 10px;
+                    box-shadow:
+                    rgba(50, 50, 93, 0.15) 0px 1px 3px -1px,
+                    rgba(0, 0, 0, 0.15) 0px 1px 3px -1px;
+
+                    .timeline-result {
+                        .result-date {
+                            margin-bottom: 10px;
+                            text-transform: uppercase;
+                            font-family: $brand;
+                            font-size: 0.79rem;
+                            letter-spacing: 2px;
+                            color: $accent;
+                        }
+
+                        .result-title {
+                            margin-bottom: 10px;
+                            font-family: $outline;
+                            font-size: 1.7rem;
+                            letter-spacing: 2px;
+                            color: $black-80;
+                        }
+
+                        .result-coach {
+                            margin-bottom: 10px;
+                            text-transform: uppercase;
+                            font-family: $outline;
+                            font-size: 0.79rem;
+                            letter-spacing: 2px;
+                            color: $shade;
+                        }
+
+                        .result-info {
+                            margin-bottom: 20px;
+                            font-family: $brand;
+                            font-size: 0.83rem;
+                            letter-spacing: 1px;
+                            line-height: 22px;
+                            color: $shade;
+                        }
+
+                        a {
+                            cursor: pointer;
+                            padding: 5px 8px 5px 8px;
+                            font-family: $brand;
+                            font-size: 0.79rem;
+                            letter-spacing: 1px;
+                            border-radius: 0 6px 0 6px;
+                            background-color: $black-80;
+                            color: $white;
+                        }
+
+                        a:hover {
+                            background-color: $shade;
+                            transition: 0.15s ease-in;
+                        }
+                    }
+                }
+
+                li:hover {
+                    background-color: #7c7c7c0a;
+                    transition: 0.25s ease-in;
+                }
+
+                li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    main {
+        .container {
+            .timeline {
+                ul {
+                    padding: 0 15px;
+
+                    li {
+                        position: relative;
+                        width: 50%;
+                        margin-bottom: 50px;
+                    }
+
+                    li:nth-child(odd) {
+                        float: left;
+                        clear: right;
+                        border-radius: 0 10px 0 10px;
+                        transform: translateX(-15px);
+                    }
+
+                    li:nth-child(even) {
+                        float: right;
+                        clear: left;
+                        border-radius: 10px 0 10px 0;
+                        transform: translateX(15px);
+                    }
+
+                    //   Markers
+                    li::before {
+                        position: absolute;
+                        height: 12px;
+                        width: 12px;
+                        top: 0px;
+                        border-radius: 50%;
+                        background-color: $black-80;
+                        content: '';
+                    }
+
+                    //   marker placement
+                    li:nth-child(odd)::before {
+                        right: -15px;
+                        transform: translate(50%, -50%);
+                    }
+
+                    li:nth-child(even)::before {
+                        left: -15px;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    .timeline-result {
+
+                        //   replacement of the date
+                        .result-date {
+                            position: absolute;
+                            top: -30px;
+                        }
+                    }
+                }
+            }
+
+            .timeline:before {
+                position: absolute;
+                width: 1px;
+                height: 100%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $shade-80;
+                content: '';
+            }
+        }
+    }
+}
