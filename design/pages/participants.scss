@@ -1,0 +1,74 @@
+@import '../default/var-reset.scss';
+
+main {
+    min-height: 100vh;
+    padding-top: 65px;
+
+    .container {
+        max-width: 750px;
+        margin: 0 auto;  
+        padding: 0 15px;
+
+        .participants-title {            
+            h3 {
+                padding: 40px 0 40px 0;
+                font-family: $outline;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+            }
+        }
+
+        .participants-table {
+            width: 100%;
+            text-align: left;
+            font-family: $brand;
+            font-size: 0.85rem;
+            border-collapse: collapse;
+
+            th {
+                font-family: $outline;
+                text-transform: uppercase;
+                background-color: $accent;
+                color: $black-80;
+                word-break: break-all;
+            }
+
+            td, th {
+                overflow-x: scroll;
+                padding: 10px;    
+            }
+
+            tr:nth-child(even){
+                background-color: #f6f6f6;
+            }
+
+            tr:hover {
+                background-color: #ffba2477;
+                transition: 0.15s ease-in;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        .container {
+            .participants-title {            
+                h3 {
+                    padding: 60px 0 40px 0;
+                    font-size: 1.3rem;
+                }
+            }
+    
+            .participants-table {
+                font-size: 0.87rem;
+                letter-spacing: 1px;
+    
+                td, th {
+                    overflow-x: scroll;
+                    padding: 12px;    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@300&family=Nanum+Gothic&family=Urbanist:wght@800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+main {
+  min-height: 100vh;
+  padding-top: 65px;
+}
+
+main .container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+main .container .participants-title h3 {
+  padding: 40px 0 40px 0;
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+main .container .participants-table {
+  width: 100%;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  border-collapse: collapse;
+}
+
+main .container .participants-table th {
+  font-family: "Urbanist", sans-serif;
+  text-transform: uppercase;
+  background-color: #ffba24;
+  color: #181818;
+  word-break: break-all;
+}
+
+main .container .participants-table td, main .container .participants-table th {
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+main .container .participants-table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+main .container .participants-table tr:hover {
+  background-color: #ffba2477;
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+}
+
+@media (min-width: 768px) {
+  main .container .participants-title h3 {
+    padding: 60px 0 40px 0;
+    font-size: 1.3rem;
+  }
+  main .container .participants-table {
+    font-size: 0.87rem;
+    letter-spacing: 1px;
+  }
+  main .container .participants-table td, main .container .participants-table th {
+    overflow-x: scroll;
+    padding: 12px;
+  }
+}
+/*# sourceMappingURL=participants.css.map */
