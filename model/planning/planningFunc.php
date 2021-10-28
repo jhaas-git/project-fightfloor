@@ -84,7 +84,6 @@ if (isset($_GET['id'])) {
     $statement = $pdo->prepare($sql);
     $statement->execute([
         // Assign $idLes to the database value :idLes.
-
         ':idUser' => $_SESSION['idUser'],
         ':idLes' => $idLes
     ]);

@@ -50,7 +50,7 @@ main .container .participants-table td, main .container .participants-table th {
   padding: 10px;
 }
 
-main .container .participants-table tr:nth-child(even) {
+main .container .participants-table tr:nth-child(odd) {
   background-color: #f6f6f6;
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-require 'config/connect.php';
+require '../config/connect.php';
 
 session_start();
 
@@ -25,7 +25,7 @@ if ($stmt->rowCount() == 1){
         $_SESSION['sVoornaam'] = $user['sVoornaam'];
         $_SESSION['rollen_idRol'] = $user['rollen_idRol'];
 
-        header('Location: ../template/profile.php');
+        header('Location: ../../template/profile.php');
     }
 }
 

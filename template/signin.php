@@ -22,7 +22,7 @@
                     <h3 class="title">aanmelden</h3>
                     <p>Nog geen account? <a href="#">Registreer hier</a>!</p>
 
-                    <form action="../model/authenticate.php" method="post">
+                    <form action="../model/session/authenticate.php" method="post">
                         <input type="text" name="username" placeholder="E-mailadres" required>
                         <input type="password" name="wachtwoord" placeholder="wachtwoord" required>
                         <p class="remember"><input type="checkbox" name="remember" id=""> Gegevens onthouden</p>

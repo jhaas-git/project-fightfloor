@@ -13,11 +13,6 @@
                 <li><a href="planning.php">rooster</a></li>
                 <li><a href="#">huisregels</a></li>
                 <?php 
-                // Only display the link to admin panel when the logged in user has the
-                // correct roles. 1 = eigenaar, 2 = coach.
-                if ($_SESSION['rollen_idRol'] == 1 || $_SESSION['rollen_idRol'] == 2) {
-                    echo "<li><a href='adminpanel.php'>admin</a></li>";
-                }
                 // Display the 'aanmelden' button only when no session is set.
                 // Session running? It will link to the profile with a greeting.
                 if(!isset($_SESSION['loggedin'])) {
@@ -26,7 +21,7 @@
                     // Display the logged in users' name and link to their profile. 
                     echo "<li><a href='../template/profile.php'>Hallo, <span>". $_SESSION["sVoornaam"] ."</span></a></li>";
                     // Display the option to logout when logged in.
-                    echo "<li><a href='../model/signout.php' class='loginBtn'>uitloggen</span></a></li>";
+                    echo "<li><a href='../model/session/signout.php' class='loginBtn'>uitloggen</span></a></li>";
                 }
                 ?>
             </ul>

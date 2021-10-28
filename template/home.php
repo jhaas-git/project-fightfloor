@@ -53,7 +53,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="modal-body-content">
-                            <form action="../model/register.php" method="post" class="form-wizard js-form-wizard"
+                            <form action="member.php?SessionFunc=1" method="post" class="form-wizard js-form-wizard"
                                 novalidate>
                                 <div class="progress-bar js-progress-bar"></div>
                                 <div class="step js-step">
