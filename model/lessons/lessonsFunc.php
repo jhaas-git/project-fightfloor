@@ -4,28 +4,19 @@ function lessonsForm() {
     session_start();
     require '../model/config/connect.php';
 
-    // Fetch data from sport and gebruikers to display in the multi selects.
-    $fetchLessonData = 'SELECT *
-    FROM gebruikers
-    LEFT OUTER JOIN sport
-    ON gebruikers.idUser = sport.idSport
-    WHERE gebruikers.rollen_idRol = :idEmployee;';
-
-    $statement = $pdo->prepare($fetchLessonData);
-    $statement->execute([
-        ':idEmployee' => 2
-    ]);
-
-    $lessonData = $statement->fetch(PDO::FETCH_ASSOC);
     echo "
         <form action='admin.php?LessonFunc=2' method='post'> 
             <label>Coach</label>
-            <select name='coach'>
-                <option>". $lessonData['idUser'] ."</option>
+            <select name='coach'>";
+            // Function makes a select option foreach fetched row.
+                getCoach();
+                echo "
             </select>
             <label>Sport</label>
-            <select name='sport'>
-                <option>". $lessonData['idSport'] ."</option>
+            <select name='sport'>";
+            // Function makes a select option foreach fetched row.
+                getSport();
+                echo "
             </select>
             <label>Les beschrijving</label>
             <input type='text' name='sub'>
@@ -35,6 +26,35 @@ function lessonsForm() {
         </form>
     ";
 }
+
+// Fetch all coaches from the database. These will result in select options.
+function getCoach() {
+    require '../model/config/connect.php';
+
+    $selectCoach = $pdo->query('SELECT * FROM gebruikers WHERE rollen_idRol = 2');
+
+    foreach ($selectCoach as $coach)
+    {
+        // Value has to be the id of the user. Without passing the id it won't be inserted.
+        echo "<option value='". $coach['idUser'] ."'>". $coach['sVoornaam'] ."</option>";
+    }
+    $pdo=null;
+}
+
+// Fetch all sports from the database. These will result in select options.
+function getSport() {
+    require '../model/config/connect.php';
+
+    $selectSport = $pdo->query('SELECT * FROM sport');
+
+    foreach ($selectSport as $sport)
+    {
+        // Value has to be the id of the user. Without passing the id it won't be inserted.
+        echo "<option value='". $sport['idSport'] ."'>". $sport['sNaamSport'] ."</option>";
+    }
+    $pdo=null;
+}
+
 
 function insertLesson() {
     require '../model/config/connect.php';
@@ -54,6 +74,8 @@ function insertLesson() {
         ':BeschrijvingLes' => $sub,
         ':Tijdstip' => $date
     ]);
+
+    header('Location: profile.php');
 }
 
 function fetchLessons() {
@@ -61,13 +83,7 @@ function fetchLessons() {
 
     // Only scheduled lessons that are upcoming will be displayed. Anything greater than the current time won't be shown. 
     // Ascending from first to last. This way it doesn't matter when a lesson is added.
-    $selectLessons = $pdo->query('SELECT * FROM lessen
-        RIGHT JOIN gebruikers
-        ON lessen.gebruikers_idUser = gebruikers.idUser
-        RIGHT JOIN sport
-        ON lessen.sport_idSport = sport.idSport
-        ORDER BY lessen.dTijdstip ASC;'
-    );
+    $selectLessons = $pdo->query('SELECT * FROM lessen');
 
     foreach ($selectLessons as $lesInfo)
     {
@@ -81,10 +97,7 @@ function fetchLessons() {
                     <h1 class='result-title'>". $lesInfo['sNaamSport'] ."</h1>
                     <h3 class='result-coach'>". $lesInfo['sVoornaam'] ." ". $lesInfo['sAchternaam'] ."</h3>
                     <p class='result-info'>". $lesInfo['sBeschrijving'] ."</p>";
-                    if($_SESSION['rollen_idRol'] == 3){
-                    echo "<a href='../model/planning/planningFunc.php?id=". $lesInfo['idLes'] ."'>inschrijven</a>";
-                    }
-                    else if($_SESSION['rollen_idRol'] == 1 || $_SESSION['rollen_idRol'] == 2){
+                    if($_SESSION['rollen_idRol'] == 1 || $_SESSION['rollen_idRol'] == 2){
                         // This button handles another function (getParticipants). In this file as well.
                         echo "<a href='participants.php?idlijst=". $lesInfo['idLes'] ."'>deelnemerslijst</a>";
                     }

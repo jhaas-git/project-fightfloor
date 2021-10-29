@@ -93,7 +93,7 @@
                         if($_SESSION['rollen_idRol'] == 2){
                             echo "  
                             <ul>
-                                <li><a href='admin.php?AccountFunc=7&id=". $profileDetails['sVoornaam'] ."'>Profiel bewerken</a></li>
+                                <li><a href='updateform.php?id=". $_SESSION['idUser'] ."'>Profiel bewerken</a></li>
                             </ul>";
                             } elseif ($_SESSION['rollen_idRol'] == 1) {
                                 echo "  

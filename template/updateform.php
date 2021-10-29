@@ -20,7 +20,7 @@ $gebruikers = updateForm();
         <input type='text' name='woonplaats' value='<?php echo $gebruikers['sWoonplaats'] ?>'>
         <input type='text' name='adres' value='<?php echo $gebruikers['sAdres'] ?>'>
         <input type='text' name='postcode' value='<?php echo $gebruikers['sPostcode'] ?>'>
-        <input type='text' name='telefoon' value='<?php echo $gebruikers['sTelefoon'] ?>'>
+        <input type='text' name='telefoonnummer' value='<?php echo $gebruikers['sTelefoon'] ?>'>
         <input type='text' name='mail' value='<?php echo $gebruikers['sMail'] ?>'>
         <input type='password' name='wachtwoord' placeholder='********'>
         <button type='submit'>updaten</button>

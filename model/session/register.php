@@ -59,7 +59,7 @@ function insertEmployee() {
         ':wachtwoord' => $hash
     ]);
     
-    header("Location: ../template/signin.php");    
+    header("Location: ../template/profile.php");    
 }
 
 ?>

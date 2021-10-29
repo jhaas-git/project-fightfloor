@@ -20,6 +20,37 @@ function updateForm() {
 }
 
 function updateUser() {
+    require '../model/config/connect.php';
+    session_start();
+
+    $voornaam = $_POST['voornaam'];
+    $achternaam = $_POST['achternaam'];
+    $woonplaats = $_POST['woonplaats'];
+    $adres = $_POST['adres'];
+    $postcode = $_POST['postcode'];
+    $telefoonnummer = $_POST['telefoonnummer'];
+    $mail = $_POST['mail'];
+    $wachtwoord = $_POST['wachtwoord'];
+    $hash = hash('sha256', $wachtwoord);
+    
+    $updateUserInfo = 'UPDATE gebruikers 
+    SET sVoornaam = :voornaam, sAchternaam = :achternaam, sWoonplaats = :woonplaats, sAdres = :adres, sPostcode = :postcode, sTelefoon = :telefoonnummer, sMail = :mail, sWachtwoord = :wachtwoord
+    WHERE idUser=:idUser';
+    
+    $stmt = $pdo->prepare($updateUserInfo);
+    $stmt->execute([
+        ':voornaam' => $voornaam,
+        ':achternaam' => $achternaam,
+        ':woonplaats' => $woonplaats,
+        ':adres' => $adres,
+        ':postcode' => $postcode,
+        ':telefoonnummer' => $telefoonnummer,
+        ':mail' => $mail,
+        ':wachtwoord' => $hash,
+        ':idUser' => $_SESSION['idUser']
+    ]);
+    
+    header("Location: ../template/profile.php");  
 
 }
 ?>
