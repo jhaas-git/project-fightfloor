@@ -1,11 +1,8 @@
  <?php 
     include '../model/config/connect.php';
-    session_start();
 
-    // Page is only available for employees.
-    if ($_SESSION['rollen_idRol'] == 1 || $_SESSION['rollen_idRol'] == 2) {
-        session_start();
-    } else {
+    session_start();
+    if (!isset($_SESSION['loggedin'])) {
         header('Location: signin.php');
         exit;
     }
@@ -20,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../design/default/header.css">
     <link rel="stylesheet" href="../design/pages/participants.css">
+    <link rel="stylesheet" href="../design/pages/admin.css">
     <link rel="stylesheet" href="../design/default/footer.css">
     <title>Admin | Fight Floor</title>
 </head>
@@ -28,7 +26,7 @@
     <?php include 'default/header.php' ?>
 
     <main>
-        <div class="container" style="margin-top: 100px;">
+        <div class="container">
             <?php 
                 if (isset($_GET['LessonFunc'])) {
                     include '../model/lessons/lessonsFunc.php';
@@ -40,9 +38,9 @@
                         break;
                         case 3:fetchLessons();
                         break;
-                        case 4: sportForm();
+                        case 4:sportForm();
                         break;
-                        case 5: insertSport();
+                        case 5:insertSport();
                         break;
                     }
                 } else if(isset($_GET['SessionFunc'])) {
@@ -59,6 +57,8 @@
                         case 7:updateForm();
                         break;
                         case 8: updateUser();
+                        break;
+                        case 9: updatePass();
                         break;
                     }
                 }

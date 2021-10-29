@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat:wght@300&family=Nanum+Gothic&family=Urbanist:wght@800&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 65px;
+  min-height: 100vh;
+}
+
+main .container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 60px 15px 40px 15px;
+}
+
+main .container h3 {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+main .container .small {
+  font-size: 0.83rem;
+  margin-bottom: 10px;
+}
+
+main .container input[type=text],
+main .container input[type=password],
+main .container input[type=datetime-local] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border: 1px solid #bebebe;
+  outline: none;
+}
+
+main .container input[type=text]:focus,
+main .container input[type=password]:focus,
+main .container input[type=datetime-local]:focus,
+main .container input[type=text]:hover,
+main .container input[type=password]:hover,
+main .container input[type=datetime-local]:hover {
+  border: 1px solid #ffba24;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+main .container select {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 40px;
+  border: 1px solid #bebebe;
+  background-color: #f7f7f7;
+  outline: none;
+}
+
+main .container select:focus {
+  border: 1px solid #ffba24;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+main .container select:hover {
+  border: 1px solid #ffba24;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+main .container button {
+  width: 100%;
+  height: 35px;
+  text-transform: uppercase;
+  font-family: "Fugaz One", cursive;
+  border-radius: 8px 0 8px 0;
+  border: 1px solid #bebebe;
+  background-color: #fff;
+  color: #bebebe;
+}
+
+main .container button:hover {
+  cursor: pointer;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  border: 1px solid #ffba24;
+  color: #ffba24;
+}
+/*# sourceMappingURL=admin.css.map */

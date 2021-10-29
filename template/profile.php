@@ -50,14 +50,14 @@
                         if($_SESSION['rollen_idRol'] == 2){
                         echo "  
                         <ul>
-                            <li><a href='admin.php?LessonFunc=1'>toevoegen lessen</a></li>
-                            <li><a href='admin.php?LessonFunc=3'>bekijken lessen</a></li>
+                            <li><a href='admin.php?LessonFunc=1'>Toevoegen lessen</a></li>
+                            <li><a href='admin.php?LessonFunc=3'>Bekijken lessen</a></li>
                         </ul>";
                         } elseif ($_SESSION['rollen_idRol'] == 1) {
                             echo "  
                             <ul>
                                 <li><a href='admin.php?LessonFunc=4'>Toevoegen sporten</a></li>
-                                <li><a href='admin.php?LessonFunc=3'>bekijken lessen</a></li>
+                                <li><a href='admin.php?LessonFunc=3'>Bekijken lessen</a></li>
                             </ul>";    
                         }
                         else {
@@ -94,14 +94,15 @@
                             echo "  
                             <ul>
                                 <li><a href='updateform.php?id=". $_SESSION['idUser'] ."'>Profiel bewerken</a></li>
+                                <li><a href='passwordForm.php?id=". $_SESSION['idUser'] ."'>Wachtwoord veranderen</a></li>
                             </ul>";
                             } elseif ($_SESSION['rollen_idRol'] == 1) {
                                 echo "  
                                 <ul>
-                                    <li><button id='registerBtn'>Medewerker registreren</button>
-                                    </li>
+                                    <li><button id='registerBtn'>Medewerker registreren</button></li>
                                     <li><a href='updateform.php?id=". $_SESSION['idUser'] ."'>Profiel bewerken</a></li>
-                                </ul>
+                                    <li><a href='passwordForm.php?id=". $_SESSION['idUser'] ."'>Wachtwoord veranderen</a></li>
+                                    </ul>
                                 <div class='modal' id='registerModal'>
                                 <div class='modal-content'>
                                     <div class='modal-header'>
@@ -177,8 +178,12 @@
                             </div>";    
                             }
                             else {
-                            echo "<h3><span>kickboks</span> is de sport die je <br> het afgelopen jaar het <br> meest hebt beoefend.</h3>";
-                        }
+                            echo "
+                            <ul>
+                                <li><a href='updateform.php?id=". $_SESSION['idUser'] ."'>Profiel bewerken</a></li>
+                                <li><a href='passwordForm.php?id=". $_SESSION['idUser'] ."'>Wachtwoord veranderen</a></li>
+                            </ul>";
+                            }
                         ?>
                     </div>
                 </div>

@@ -6,23 +6,23 @@ function lessonsForm() {
 
     echo "
         <form action='admin.php?LessonFunc=2' method='post'> 
-            <label>Coach</label>
+            <h3 class='small'>Coach</h3>
             <select name='coach'>";
             // Function makes a select option foreach fetched row.
                 getCoach();
                 echo "
             </select>
-            <label>Sport</label>
+            <h3 class='small'>Sport</h3>
             <select name='sport'>";
             // Function makes a select option foreach fetched row.
                 getSport();
                 echo "
             </select>
-            <label>Les beschrijving</label>
+            <h3 class='small'>Les beschrijving</h3>
             <input type='text' name='sub'>
-            <label>Tijdstip</label>
+            <h3 class='small'>Tijdstip</h3>
             <input type='datetime-local' name='date'>
-            <input type='submit' value='voltooien'> 
+            <button type='submit'>voltooien</button>
         </form>
     ";
 }
@@ -81,30 +81,29 @@ function insertLesson() {
 function fetchLessons() {
     require '../model/config/connect.php';
 
-    // Only scheduled lessons that are upcoming will be displayed. Anything greater than the current time won't be shown. 
-    // Ascending from first to last. This way it doesn't matter when a lesson is added.
+    // Fetching all lessons
     $selectLessons = $pdo->query('SELECT * FROM lessen');
 
+    // Echo the title and table to display data in.
+    echo "<h3 class='small'>Lijst met lessen</h3>
+    <table class='participants-table'>
+    <tr>
+        <th>les ID</th>
+        <th>Tijdstip</th>
+        <th>Deelnemerslijst</th>
+    <tr>";
+
+    // Foreach result a table row is made which displays information about lessons.
     foreach ($selectLessons as $lesInfo)
     {
-        // Each result will create a new list item. The list item displays all information on that specific lesson.
-        // When a logged in member visits the page, 'inschrijven' will be visible. This enables them to join a lesson.
-        // When a logged in employee / owner visits the page, 'deelnemerslijst' will be visible. This enables them to fetch all members that signed up for that lesson.
-        // If no session is active no button will be visible.
-        echo "<li>
-                <div class='timeline-result'>
-                    <h3 class='result-date'>". $lesInfo['dTijdstip'] ."</h3>
-                    <h1 class='result-title'>". $lesInfo['sNaamSport'] ."</h1>
-                    <h3 class='result-coach'>". $lesInfo['sVoornaam'] ." ". $lesInfo['sAchternaam'] ."</h3>
-                    <p class='result-info'>". $lesInfo['sBeschrijving'] ."</p>";
-                    if($_SESSION['rollen_idRol'] == 1 || $_SESSION['rollen_idRol'] == 2){
-                        // This button handles another function (getParticipants). In this file as well.
-                        echo "<a href='participants.php?idlijst=". $lesInfo['idLes'] ."'>deelnemerslijst</a>";
-                    }
-                    echo "
-                </div>
-            </li>";
-    }
+      echo "
+        <tr>
+            <td>". $lesInfo['idLes'] ."</td>
+            <td>". $lesInfo['dTijdstip'] ."</td>  
+            <td><a href='participants.php?idlijst=". $lesInfo['idLes'] ."'>deelnemerslijst</a></td>                              
+        </tr>";
+    } echo "</table>";
+
     $pdo=null;
 }
 
@@ -112,10 +111,12 @@ function sportForm() {
     session_start();
     require '../model/config/connect.php';
 
+    // Display the form
     echo "
         <form action='admin.php?LessonFunc=5' method='post'> 
-            <input type='text' name='sport'></input>
-            <input type='submit' value='voltooien'> 
+            <h3 class='small'>Sportnaam</h3>
+            <input type='text' placeholder='Kickboks' name='sport'></input>
+            <button type='submit'>voltooien</button>
         </form>
     ";
 }

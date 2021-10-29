@@ -112,6 +112,23 @@ main {
                         -webkit-text-stroke: 1px $white;
                         -webkit-text-fill-color: transparent;
                     }
+
+                    button {
+                        cursor: pointer;
+                        border: none;
+                        font-family: $brand;
+                        font-size: 0.89rem;
+                        color: $black-80;
+                        background-color: transparent;
+                    }
+
+                    a {               
+                        line-height: 25px;
+                        text-decoration: none;             
+                        font-family: $brand;
+                        font-size: 0.89rem;
+                        color: $black-80;
+                    }
                 }
 
                 .modal {

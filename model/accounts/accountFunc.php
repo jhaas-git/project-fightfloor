@@ -30,11 +30,9 @@ function updateUser() {
     $postcode = $_POST['postcode'];
     $telefoonnummer = $_POST['telefoonnummer'];
     $mail = $_POST['mail'];
-    $wachtwoord = $_POST['wachtwoord'];
-    $hash = hash('sha256', $wachtwoord);
     
     $updateUserInfo = 'UPDATE gebruikers 
-    SET sVoornaam = :voornaam, sAchternaam = :achternaam, sWoonplaats = :woonplaats, sAdres = :adres, sPostcode = :postcode, sTelefoon = :telefoonnummer, sMail = :mail, sWachtwoord = :wachtwoord
+    SET sVoornaam = :voornaam, sAchternaam = :achternaam, sWoonplaats = :woonplaats, sAdres = :adres, sPostcode = :postcode, sTelefoon = :telefoonnummer, sMail = :mail
     WHERE idUser=:idUser';
     
     $stmt = $pdo->prepare($updateUserInfo);
@@ -46,11 +44,31 @@ function updateUser() {
         ':postcode' => $postcode,
         ':telefoonnummer' => $telefoonnummer,
         ':mail' => $mail,
-        ':wachtwoord' => $hash,
         ':idUser' => $_SESSION['idUser']
     ]);
     
     header("Location: ../template/profile.php");  
 
 }
+
+function updatePass() {
+    require '../model/config/connect.php';
+    session_start();
+
+    $wachtwoord = $_POST['wachtwoord'];
+    $hash = hash('sha256', $wachtwoord);
+    
+    $updateUserInfo = 'UPDATE gebruikers 
+    SET sWachtwoord = :wachtwoord
+    WHERE idUser=:idUser';
+    
+    $stmt = $pdo->prepare($updateUserInfo);
+    $stmt->execute([
+        ':wachtwoord' => $hash,
+        ':idUser' => $_SESSION['idUser']
+    ]);
+    
+    header("Location: ../template/signin.php");  
+}
+
 ?>
